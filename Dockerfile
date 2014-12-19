@@ -3,7 +3,8 @@ FROM ubuntu:14.04
 RUN ulimit -n 65536
 
 # Install prerequisites.
-RUN apt-get install -y curl && \
+RUN apt-get update && \
+    apt-get install -y curl && \
     apt-get install -y -q libcurl4-openssl-dev make && \
     apt-get clean
 
