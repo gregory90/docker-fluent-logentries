@@ -18,7 +18,7 @@ RUN sed -i -e "s/USER=td-agent/USER=root/" -e "s/GROUP=td-agent/GROUP=root/" /et
 RUN /usr/sbin/td-agent-gem install fluent-plugin-logentries
 
 COPY td-agent.conf /etc/td-agent/td-agent.conf
-COPY token.token /data/token.token
+COPY out_logentries.rb /etc/td-agent/plugin/out_logentries.rb
 
 # Copy a script that determines the name of the host machine
 # and then patch the Fluentd configuration files and then

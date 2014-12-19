@@ -20,5 +20,5 @@
 # service IPs are done.
 #OUTER_HOST=`tail -n 1 /outerhost | awk '{print $3}'`
 
-sed -i -e "s/\%TOKEN\%/${TOKEN}/" /data/token.token
+sed -i -e "s/\%TOKEN\%/${TOKEN}/" /etc/td-agent/td-agent.conf
 /usr/sbin/td-agent -qq "$@"
