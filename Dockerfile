@@ -15,8 +15,6 @@ RUN /usr/bin/curl -L http://toolbelt.treasuredata.com/sh/install-ubuntu-trusty-t
 # Needed to allow access to /var/log/docker/... files.
 RUN sed -i -e "s/USER=td-agent/USER=root/" -e "s/GROUP=td-agent/GROUP=root/" /etc/init.d/td-agent
 
-RUN /usr/sbin/td-agent-gem install fluent-plugin-logentries
-
 COPY td-agent.conf /etc/td-agent/td-agent.conf
 COPY out_logentries.rb /etc/td-agent/plugin/out_logentries.rb
 
