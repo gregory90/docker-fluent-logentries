@@ -33,17 +33,14 @@ class LogentriesOutput < Fluent::BufferedOutput
 
   # NOTE! This method is called by internal thread, not Fluentd's main thread. So IO wait doesn't affect other plugins.
   def write(chunk)
-    tokens = generate_token(@path)
-
     chunk.msgpack_each do |tag, record|
       next unless record.is_a? Hash
 
       token = @token
       next if token.nil?
-      log.warn "#{token}"
 
-      if record.has_key?("message")
-        send_logentries(record["message"] + ' ' + token)
+     if record.has_key?("log")
+        send_logentries(token + ' ' + record["log"])
       end
     end
   end
