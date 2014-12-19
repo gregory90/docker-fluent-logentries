@@ -24,6 +24,7 @@ COPY token.token /data/token.token
 # and then patch the Fluentd configuration files and then
 # run Fluentd in the foreground.
 ADD run.sh /run.sh
+RUN chmod +x /run.sh
 
 # Always run the this setup script.
 ENTRYPOINT ["/run.sh"]
