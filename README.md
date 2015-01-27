@@ -1,3 +1,6 @@
+If you're looking for more complete solution, please use [dataferret/docker-logentries](https://github.com/dataferret/docker-logentries)
+
+
 ### Overview
 Log data from docker host through fluent to logentries.
 
