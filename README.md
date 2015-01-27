@@ -9,7 +9,11 @@ docker run -v /var/lib/docker/containers:/var/lib/docker/containers -e TOKEN={TO
 TOKEN - token from logentries
 
 
-## MIT
+### Credits
+Connector for fluent to send logs to logentries is based on https://github.com/Woorank/fluent-plugin-logentries
+
+
+### MIT
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
